@@ -1,0 +1,57 @@
+休整期可更换技能和模组mod（prep-loadout-mod 1.0.0，为上游 v0.2.4 制作）
+================================================================
+
+> **已经并进整包了**：跨版本一键安装包 **v1.4.8** 起自带本功能。如果你装的是
+> `卫戍协议mod-跨版本一键安装包-v1.4.8-适配0.2.4.zip`（或更高），**不要再装这个拆分包** ——
+> 两者改同一批文件，第二个会被安装器的「目标不是 release 原文」检查拦住。
+> 只有想单独给 0.2.4 官方版加这一个功能、不装整包时，才用这个包。
+
+开局「干员调配」结束后，官方规则里一名干员的**技能**与**精英模组**就锁死了（DESIGN §16：配发只接受
+INFO_CHECK 阶段），之后整局都不能再改；这是一个刻意的玩法偏差（维护者决定），只影响**休整期**。
+
+* **休整期**（回合之间的准备阶段）里，点开**自己**干员的详情面板：技能的区块下方多一排技能按钮（S1 / S2 / S3…
+  有名字的显示名字），精英干员在模组的区块下方多一排模组按钮（含「未装备模组」）。当前那一项高亮，点一下即切换。
+* 只在自己能编辑的干员上出现（观战 / 队友的棋子没有按钮），只有**休整期**有效：已经按了「准备完毕」、或者已经
+  进入战斗阶段，服务端一律拒绝（`WRONG_PHASE`），配发保持不变。
+* **只改一名干员**：客户端发送的是「一名干员的增量」，服务端把它**合并**进你当前的配发 —— 不会清掉别的干员的
+  设定（这一点和 `setLoadout` 的整份替换不同）。
+* 只点模组而没点技能时，那名干员的整条配发条目会被这次提交替换，技能回落到**默认技能**；点技能同理保持模组默认。
+  想同时指定两者，客户端会一起带上（精英干员的按钮会同时提交技能 + 模组）。
+
+装了什么
+--------
+* **新意图** `g.loadout {entries, ops?}`：
+  - `shared/protocol.js`：协议表登记（复用 `isLoadoutEntries` / `isLoadoutOps`，与 `room.loadout` 同形，`ops` 可省）。
+  - `server/match/match/intents.js`：`_handle` 里路由到 `Match.setPrepLoadout()`。
+  - `server/match/match/platform.js`：`setPrepLoadout(playerId, loadout, ops)` —— PREP 且未准备时，把增量
+    **合并**进 `ps.loadout`（`{...现有配发, ...本次条目}`）再交给 `PlayerState.setLoadout()` 复核并冻结。
+* **客户端**：`public/js/ui/gameActions.js` 的 `actions.loadout`（成功后放「确认」音效）、
+  `public/js/screens/game.js` 把 `editable` 透传给 `DetailPanel`（原来算出来了但没传下去）、
+  `public/js/ui/detailPanel.js` 里 `ChessDetail` 的技能 / 模组切换按钮（`loadoutOptions` 算可选项），
+  `public/css/screens/game-panels.css` 的 `.dloadout-pick` 按钮行样式。
+* `--uninstall` 会把 `g.loadout` 一并拿走；协议表在两端都要在，所以**必须重启**服务端与刷新页面。
+
+不装：任何内容（干员 / 装备 / 盟约）、干员调配界面本身、装备拆卸、模组解锁规则。
+
+装到上游项目
+------------
+先把上游 checkout（0.2.4）用 `npm ci` 装好依赖 —— git 克隆的仓库、或者**官方发布包**（Releases 里那个
+zip，解压出来带 MANIFEST.json、没有 .git）都可以。**不需要** `--assets`：这个包不带任何美术资源。
+
+  cd /d 这个文件夹
+  node prep-loadout-mod\install.mjs <上游项目目录>             装（先备份每个被覆盖的文件）
+  node prep-loadout-mod\install.mjs <上游项目目录> --dry-run   只看要做什么，不写文件
+  node prep-loadout-mod\install.mjs <上游项目目录> --verify    校验已装好的目标
+  node prep-loadout-mod\install.mjs <上游项目目录> --uninstall 还原成装之前的样子
+
+装完**重启上游服务**（npm start），进对局的休整期点自己的干员即可看到切换按钮。
+
+注意
+----
+* 只适用于 0.2.4：mod 里的服务端是整份文件覆盖（`server/match/match/platform.js`、`intents.js`、
+  `shared/protocol.js`…），换版本要先等适配。
+* **一次只装一个**：本包和其余拆分包、以及整包 mod 都换同一批文件（`shared/protocol.js`、
+  `public/js/ui/detailPanel.js`、`game-panels.css`、`server/match/match/*.js`…），第二个装上去会被安装器的
+  「目标不是 release 原文」检查拦住。想同时要多件事，装**整包 mod**。
+* 装到「已经装过这个 mod」的目录上是**修复**；`--uninstall` 会还原被覆盖的文件。
+* 和观战无关：观战别人的休整期不显示按钮（服务端也不会接受）。
