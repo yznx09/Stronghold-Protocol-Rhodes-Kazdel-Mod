@@ -3,7 +3,7 @@
 > 本文件是仓库内 Mod 的完整索引，仓库门面说明见 [README.md](README.md)。
 > 非官方 Mod 收集与归档，仅用于个人学习、备份与交流。
 
-仓库本身不存放任何二进制文件（`clone` 下来只有几十 KB），所有 Mod 安装包都在 **[Releases 页面](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)** 下载，最新版为 **v1.5.5**（34 个包，约 74 MB）。
+仓库本身不存放任何二进制文件（`clone` 下来只有几百 KB），所有 Mod 安装包都在 **[Releases 页面](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)** 下载，最新版为 **v1.5.5**（35 个包，约 79 MB）。
 
 > **关于文件名**：GitHub 的 Release 附件接口会剥离文件名中的中文字符，因此 Release 上的附件统一使用英文文件名。下表列出「原名 ↔ Release 下载名」的对应关系，本地文件仍是中文名。
 
@@ -12,11 +12,14 @@
 ## 下载与安装
 
 1. 打开 [Releases 页面](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)，按对照表找到需要的包
-2. 下载后解压得到 Mod 目录
-3. 把解压后的目录放进游戏的 Mod 目录（不同游戏版本路径可能不同，以你本地为准）
-4. 启动游戏生效
+2. 下载后解压，得到一个含 `install.mjs` / `一键安装卸载.bat` 的目录，先读里面的 `安装说明.md`
+3. 双击 `一键安装卸载.bat` 选「1 检查并安装」，或命令行执行 `node install.mjs "你的游戏目录"`
+4. 重启游戏生效（改服务端的包需要重启服务器，包内说明会写）
 
-> 部分 Mod 之间存在依赖或冲突（例如多个大厅 UI 改版），建议一次只启用一类，出问题就先全部移除再逐个加回来定位。
+> 前置条件：Node.js 22 或更新；游戏目录是含 `public/`、`server/`、`shared/` 的那一层。
+> 少数纯数据内容包没有安装器，按包内说明解压到游戏对应目录即可。
+
+> 部分 Mod 之间存在依赖或冲突（例如多个大厅 UI 改版），建议一次只装一个，出问题就先 `--uninstall` 还原再逐个加回来定位。
 
 ---
 
@@ -61,6 +64,7 @@
 | 卫戍协议mod-大厅栏位开关-v1.3.2.zip | `sp-lobby-slot-toggle-v1.3.2.zip` | 大厅栏位开关 |
 | 卫戍协议mod-大厅界面UI-mod-hubui-20261014.zip | `sp-lobby-ui-hubui-20261014.zip` | 大厅界面 UI（2026-10-14 版） |
 | 卫戍协议mod-大厅视频背景-mod-hubvideo-v1.3.0.zip | `sp-lobby-video-bg-v1.3.0.zip` | 大厅视频背景 |
+| 卫戍协议mod-大厅音乐在线平台-mod-hubmusic-v1.9.0.zip | `sp-lobby-music-online-v1.9.0.zip` | 大厅音乐接入 QQ音乐 / 网易云 / 酷我，QQ公开歌单免登录导入，搜索结果可加入播放列表，带目录扫描 / 悬浮播放器 / 双语歌词 / 歌词样式与锁定（需重启服务器） |
 | 卫戍协议mod-大厅轮播图-mod-hubcarousel-v2.0.1.zip | `sp-lobby-carousel-v2.0.1.zip` | 大厅轮播图 |
 | 轮播图mod-v1.0.0-backup.zip | `carousel-mod-v1.0.0-backup.zip` | 轮播图 v1.0.0 备份版 |
 
@@ -95,7 +99,7 @@
 
 - 上表中的功能说明依据文件名与目录内容整理，具体效果以 Mod 实际内容为准。
 - 目录中还有少量**尚未打包**的 Mod 文件夹（`阿戈尔盟约加强mod`、`整合包`、`无限卡池mod`、`干员部分修复mod`、`湮灭模式mod`、`同盟模拟人数修改mod`、`设置面板-修复前后`），可后续打包后追加到新 Release。
-- 本地仓库的 `.gitignore` 会忽略所有 zip 与已解压的 Mod 目录，因此工作目录里的 Mod 不会误入版本库。
+- 本地仓库的 `.gitignore` 会忽略所有 zip、已解压的 Mod 目录、`*.log` 与临时文件，因此工作目录里的这些内容不会误入版本库（但仍请用 git 命令行提交，网页上传不读 `.gitignore`）。
 
 ## 免责声明
 
