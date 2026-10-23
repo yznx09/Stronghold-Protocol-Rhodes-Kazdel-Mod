@@ -4,7 +4,7 @@
 
 [![latest release](https://img.shields.io/github/v/release/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod?label=release&color=2ea44f)](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/latest)
 [![downloads](https://img.shields.io/github/downloads/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/total?label=downloads)](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)
-[![packages](https://img.shields.io/badge/%E5%AE%89%E8%A3%85%E5%8C%85-35%20%E4%B8%AA-blue)](#%E5%8C%85%E4%B8%80%E8%A7%88)
+[![packages](https://img.shields.io/badge/%E5%AE%89%E8%A3%85%E5%8C%85-41%20%E4%B8%AA-blue)](#%E5%8C%85%E4%B8%80%E8%A7%88)
 [![license](https://img.shields.io/github/license/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod?label=license)](LICENSE)
 
 > [!IMPORTANT]
@@ -32,7 +32,8 @@
 - 全部安装包托管在 **[Releases](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)**，每个 zip 可单独下载、单独安装；
 - 完整清单（原名 ↔ Release 英文文件名对照）见 **[MOD-LIST.md](MOD-LIST.md)**。
 
-当前最新版：**[v1.5.5](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.5.5)** — 35 个独立安装包，合计约 79 MB。
+当前最新版：**[v1.6.0](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.6.0)** — 合并版整合包（适配上游 0.3.0）与 5 个新包，共 6 个附件、约 8 MB。
+体量最大的合集归档是 **[v1.5.5](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.5.5)** — 35 个独立安装包、约 79 MB。两个版本之间没有重复的包，累计 **41 个安装包**。
 
 Mod 内容涵盖：盟约玩法与装备、干员调整、地图与地区内容（哥伦比亚 / 雷姆必拓 / Ave Mujica 等）、大厅 UI 改版（界面、视频背景、轮播图、在线音乐）、修复补丁、模拟模式（湮灭模拟 / 测试模拟）和 Mod 管理器。
 
@@ -42,7 +43,8 @@ Mod 内容涵盖：盟约玩法与装备、干员调整、地图与地区内容�
 
 | 版本 | 日期 | 内容 |
 | --- | --- | --- |
-| **[v1.5.5](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.5.5)**（最新） | 2026-10-20 | 合集归档，**35 个独立包**，约 79 MB。推荐从这里挑 |
+| **[v1.6.0](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.6.0)**（最新） | 2026-10-24 | 合并版整合包（适配 0.3.0）+ 5 个新包，**6 个附件**，约 8 MB |
+| [v1.5.5](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.5.5) | 2026-10-20 | 合集归档，**35 个独立包**，约 79 MB |
 | [v1.5.4](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.5.4) | 2026-10-13 | 一键安装包，适配新 UI 与上游 0.2.5 |
 | [v1.5.3.1](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.5.3.1) | 2026-10-13 | 跨版本一键安装包，适配 0.2.5 + 源石弧修复 |
 | [v1.4.8](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/tag/v1.4.8) | 2026-10-12 | 适配上游 0.2.4 |
@@ -79,12 +81,14 @@ Mod 内容涵盖：盟约玩法与装备、干员调整、地图与地区内容�
 
 | 分类 | 数量 | 代表包 |
 | --- | --- | --- |
-| 盟约玩法 | 8 | 卡兹戴尔盟约、罗德岛盟约、灵巧盟约装备、盟约与策略查看、装备拆卸 |
-| 干员相关 | 5 | 干员满练、干员特质查看、休整期切换技能模组（含修复版） |
+| 整合包 | 1 | 合并版 v1.6.0（同人内容包 + 大厅 UI + 轮播图 + 栏位开关 + 语音修复），适配 0.3.0 |
+| 盟约玩法 | 9 | 卡兹戴尔盟约、罗德岛盟约、灵巧盟约装备、盟约与策略查看、装备拆卸、阿戈尔盟约加强 |
+| 干员相关 | 6 | 干员满练、干员特质查看、休整期切换技能模组（含修复版）、干员部分修复 |
+| 玩法 / 经济 | 2 | 无限卡池（0.3.0）、同盟模拟人数修改（1–100 人） |
 | 地图 / 地区内容 | 5 | 哥伦比亚、雷姆必拓（含暗索）、Ave Mujica、地图亮度冷暖度控件 |
 | 大厅 UI / 视觉 | 7 | 大厅界面 UI、视频背景、轮播图、**在线音乐平台**、选择性安装包 |
 | 修复 / 补丁 | 4 | 数值标签崩溃修复、卡兹戴尔立绘修复、源石弧修复、语音语言修复 |
-| 模拟 / 测试 | 2 | 湮灭模拟、测试模拟（Forge 工坊包） |
+| 模拟 / 测试 | 3 | 湮灭模拟 v3.1.7、测试模拟（Forge 工坊包）、湮灭藏品合集（资源导出） |
 | 工具 / 其他 | 4 | Mod 管理器（中/英）、查看装备、通讯机与寻呼模块加强 |
 
 <p align="center">
@@ -111,12 +115,15 @@ Mod 内容涵盖：盟约玩法与装备、干员调整、地图与地区内容�
 ├── LICENSE                  ← GPL-3.0
 ├── .gitignore               ← 挡住安装包、日志、临时文件
 ├── .gitattributes           ← 统一 LF，二进制不做转换
+├── .github/workflows/       ← repo-guard 自动检查
 └── docs/
-    ├── 整包-使用说明.md                        ← 整包安装详解
-    ├── 拆分包一览.md                           ← 11 个独立拆分包说明
+    ├── 整包-使用说明.md                        ← 整合包安装详解（当前：合并版 v1.6.0 / 0.3.0）
+    ├── 拆分包一览.md                           ← 拆分包共性、版本选择与共存规则
     ├── 休整期可更换技能和模组-用法.txt          ← 玩法说明
     ├── 修复记录-变形同构体覆盖修复-20261021.md   ← 兼容性修复记录
-    └── 移植记录-鸢0.3.1.1-20261023.md           ← 上游 0.3.1.1 功能移植记录
+    ├── 移植记录-鸢0.3.1.1-20261023.md           ← 上游 0.3.1.1 功能移植记录
+    ├── 设置面板-修复前后/                        ← 设置面板改版的对照截图与 HTML
+    └── 历史/                                    ← 面向 0.2.4 / 0.2.x 的旧文档归档
 ```
 
 ---
@@ -170,7 +177,8 @@ A：不会。Mod 全部在你本机或你自己的服务器上运行，不联任
 
 | 版本 | 说明 |
 | --- | --- |
-| **v1.5.5** | 合集归档，35 个独立包。新增大厅在线音乐平台（QQ音乐 / 网易云 / 酷我，免登录导入公开歌单）、湮灭模拟 v3.1.7、大厅界面 UI / 视频背景 / 轮播图系列 |
+| **v1.6.0** | 首次发布**合并版整合包（适配上游 0.3.0）**，并补齐此前未打包的 5 个包：阿戈尔盟约加强、无限卡池、干员部分修复、同盟模拟人数修改、湮灭藏品合集 |
+| v1.5.5 | 合集归档，35 个独立包。新增大厅在线音乐平台（QQ音乐 / 网易云 / 酷我，免登录导入公开歌单）、湮灭模拟 v3.1.7、大厅界面 UI / 视频背景 / 轮播图系列 |
 | v1.5.4 | 一键安装包，适配新 UI 与上游 0.2.5 |
 | v1.5.3.1 | 跨版本一键安装包，适配 0.2.5，含源石弧修复 |
 | v1.4.8 | 适配上游 0.2.4；新增休整期自由更换技能和模组 |

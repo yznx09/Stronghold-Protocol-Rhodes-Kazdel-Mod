@@ -1,0 +1,15 @@
+这两张图是用真实的游戏样式表渲染的，不是我画的示意图。
+
+渲染方式：headless Chrome + 真实的样式表（public/css/theme.css、components.css、lobby.css、
+game.css、devices.css）+ 真实的行标记（settings.js / modSwitch.js / hubSections.js 的结构）。
+
+修复前.png — 没有本 mod 的观感层：六个开关全是实心薄荷填充（rgb(78,216,175)）糊成一块绿；
+  「同人内容包」那行因为 .set-row__note 在上游没有任何规则，说明被挤成 222px 宽的窄条、
+  竖着堆在「未启用」旁边，而「未启用」还穿着数值的薄荷色。
+
+修复后.png — 装上 settingsPolish.js 之后：开关变成内容宽度的小片 + 圆点表状态（开=亮方块，
+  关=空心圈）；标签独占一行、开关组用整行宽度，六个片从 4 行压到 2 行；说明文字横跨整行
+  （377.7px 宽、38.8px 高），「未启用」改成琥珀色。单选组（语音语言 / 画面质量 / 文字大小）
+  保持原来的实心选中样式，一点没动。
+
+before.html / after.html 可以在浏览器里直接打开（依赖旁边的 _css 文件夹）。
