@@ -28,7 +28,7 @@
 
 一个**只做索引、不放二进制**的 Mod 归档仓库：
 
-- 仓库本身很小（`clone` 下来只有几百 KB），**不含任何安装包**；
+- 仓库本身很小（`clone` 下来约 200 KB），**不含任何安装包**；
 - 全部安装包托管在 **[Releases](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)**，每个 zip 可单独下载、单独安装；
 - 完整清单（原名 ↔ Release 英文文件名对照）见 **[MOD-LIST.md](MOD-LIST.md)**。
 

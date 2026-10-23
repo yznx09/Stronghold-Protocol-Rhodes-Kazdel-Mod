@@ -3,7 +3,7 @@
 > 本文件是仓库内 Mod 的完整索引，仓库门面说明见 [README.md](README.md)。
 > 非官方 Mod 收集与归档，仅用于个人学习、备份与交流。
 
-仓库本身不存放任何二进制文件（`clone` 下来只有几百 KB），所有 Mod 安装包都在 **[Releases 页面](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)** 下载，最新版为 **v1.5.5**（35 个包，约 79 MB）。
+仓库本身不存放任何二进制文件（`clone` 下来约 200 KB），所有 Mod 安装包都在 **[Releases 页面](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)** 下载，最新版为 **v1.5.5**（35 个包，约 79 MB）。
 
 > **关于文件名**：GitHub 的 Release 附件接口会剥离文件名中的中文字符，因此 Release 上的附件统一使用英文文件名。下表列出「原名 ↔ Release 下载名」的对应关系，本地文件仍是中文名。
 
