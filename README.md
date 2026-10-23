@@ -1,6 +1,6 @@
 # 卫戍协议：盟约 · 罗德岛 / 卡兹戴尔盟约 Mod
 
-给 [sganggs/Stronghold-Protocol](https://github.com/sganggs/Stronghold-Protocol)（《明日方舟》「卫戍协议：盟约」非官方同人复刻）做的**同人 Mod 合集与归档**。
+给 [sganggs/Stronghold-Protocol](https://github.com/sganggs/Stronghold-Protocol)（《明日方舟》「卫戍协议：盟约」非官方同人复刻）做的**同人 Mod 合集与归档**（**非官方同人 禁止商用**）。
 
 [![latest release](https://img.shields.io/github/v/release/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod?label=release&color=2ea44f)](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases/latest)
 [![downloads](https://img.shields.io/github/downloads/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/total?label=downloads)](https://github.com/yznx09/Stronghold-Protocol-Rhodes-Kazdel-Mod/releases)
