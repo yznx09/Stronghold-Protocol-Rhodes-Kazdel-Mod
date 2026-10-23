@@ -1,0 +1,14 @@
+[data] content pack: ave-mujica, columbia, dossoles, egir-buff, fanpack, kazdel-ship, rhodes-ship, rimbilliton
+[data] custom content pack merged (assets:17 backups:3 bands:43 bonds:29 bosses:10 chess:346 choices:9 config:24 effects:361 emotes:6 enemies:249 factions:4 garrisons:341 items:151 local-assets:4 official:4 relics:6 skins:3 stages:13 tokens:31 tuning:3 waves:38 custom-chess:4 custom-tokens:3 official-custom:3)
+[packs] lang en (English), lang ja (日本語), lang ko (한국어), lang zh-TW (繁體中文), data ave-mujica (颂乐人偶), data columbia (哥伦比亚), data dossoles (多索雷斯), data egir-buff (阿戈尔盟约加强), data fanpack (同人内容包), data kazdel-ship (卡兹戴尔盟约), data rhodes-ship (罗德岛盟约), data rimbilliton (雷姆必拓)
+[test-mode] test rooms enabled
+
+  卫戍协议：盟约 · Stronghold Protocol: Alliance v0.3.0
+  Local:   http://localhost:3000
+  LAN:     http://192.168.110.225:3000
+  LAN:     http://192.168.42.122:3000
+  LAN:     http://192.168.137.1:3000
+  LAN:     http://192.168.204.1:3000
+  LAN:     http://192.168.180.1:3000
+  Internet: cloudflared tunnel --url http://localhost:3000
+

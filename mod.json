@@ -1,0 +1,4 @@
+{
+  "enabled": true,
+  "_doc": "同人内容包开关：enabled=false 或环境变量 SP_MOD=0 时，服务器不合并 packs/，只跑官方内容。"
+}
