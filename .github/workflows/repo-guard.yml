@@ -1,0 +1,51 @@
+name: repo-guard
+
+# 本仓库只做索引，不放二进制、日志和临时文件。
+# 2026-10-24 曾因为网页「Add files via upload」把整个游戏开发目录拖进仓库，
+# 网页上传不读 .gitignore，所以这里用 CI 做最后一道检查。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    name: 检查误入库文件
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 拒绝日志 / 临时脚本 / 工程残留 / 安装包
+        run: |
+          set -euo pipefail
+          echo "被跟踪的文件数：$(git ls-files | wc -l)"
+
+          # 不该出现在本仓库的文件
+          pattern='(\.log$|(^|/)tmp-|(^|/)temp-|(^|/)package(-lock)?\.json$|(^|/)pnpm-lock\.yaml$|(^|/)yarn\.lock$|(^|/)node_modules/|(^|/)MANIFEST\.json$|(^|/)mod\.json$|(^|/)arkunpack_|\.(zip|rar|7z)$|(^|/)\.DS_Store$|(^|/)Thumbs\.db$)'
+
+          bad="$(git ls-files | grep -E "$pattern" || true)"
+          if [ -n "$bad" ]; then
+            echo "::error::发现不该入库的文件，仓库只做索引，安装包请放 Releases："
+            echo "$bad" | sed 's/^/  - /'
+            echo ""
+            echo "处理方式：git rm --cached <文件>，并把规则补进 .gitignore"
+            exit 1
+          fi
+          echo "✓ 没有误入库的文件"
+
+      - name: 检查单文件体积
+        run: |
+          set -euo pipefail
+          # 索引仓库不该有大文件；超过 5 MB 基本是新安装包误入库
+          big="$(git ls-files -z | xargs -0 -r du -b 2>/dev/null | awk '$1 > 5242880 {printf "  - %.1f MB  %s\n", $1/1048576, $2}')"
+          if [ -n "$big" ]; then
+            echo "::error::发现超过 5 MB 的文件（安装包应上传到 Releases）："
+            echo "$big"
+            exit 1
+          fi
+          echo "✓ 没有超大文件"

@@ -162,6 +162,8 @@ A：不会。Mod 全部在你本机或你自己的服务器上运行，不联任
    - 同步更新 `MOD-LIST.md` 与本文的版本号 / 包数。
 3. **别入库的东西**：`*.log`、`tmp-*`、`node_modules/`、`package*.json`、`MANIFEST.json`、`mod.json`、`arkunpack_*`、任何 zip。
 
+仓库还挂了一道自动防线 [`.github/workflows/repo-guard.yml`](.github/workflows/repo-guard.yml)：每次 push / PR 都会检查有没有上面这些文件、有没有超过 5 MB 的文件，有就直接红叉并列出文件名。
+
 ---
 
 ## 版本记录
